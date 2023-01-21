@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable({})
 export class AuthService {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  constructor(private prisma: PrismaService) {}
   signin() {
     return {
       status: true,
       msg: 'hello from AuthService',
     };
   }
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   signup() {
     return {
       status: true,
